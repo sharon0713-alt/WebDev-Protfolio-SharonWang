@@ -20,8 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (climateBtn) {
         climateBtn.addEventListener('click', function() {
             const messageBox = document.getElementById('climateMessage');
-            messageBox.innerHTML = 'Thank you for caring about our planet! 🌍 Small actions like reducing waste, saving energy, and planting trees make a big difference. Every person can help fight climate change.';
-            messageBox.classList.remove('hidden');
+            if (messageBox) {
+                messageBox.innerHTML = 'Thank you for caring about our planet! 🌍 Small actions like reducing waste, saving energy, and planting trees make a big difference. Every person can help fight climate change.';
+                messageBox.classList.remove('hidden');
+            }
         });
     }
 });
