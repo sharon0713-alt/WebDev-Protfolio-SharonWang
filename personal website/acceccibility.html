@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility | My Web Development Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="design-thinking.html">Design Thinking</a></li>
+                <li><a href="global-goal.html">Global Goal</a></li>
+                <li><a href="accessibility.html" class="active">Accessibility</a></li>
+                <li><a href="behind-the-curtain.html">Behind the Curtain</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Accessibility Statement</h1>
+            <p>Making my website usable for everyone</p>
+        </section>
+
+        <div class="accessibility-container">
+            <div class="accessibility-card">
+                <h3>Semantic HTML</h3>
+                <p>I use semantic elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> to help screen readers understand the page structure.</p>
+            </div>
+
+            <div class="accessibility-card">
+                <h3>Alt Text for Images</h3>
+                <p>All images include descriptive <code>alt</code> attributes so visually impaired users understand the content.</p>
+            </div>
+
+            <div class="accessibility-card">
+                <h3>Color Contrast</h3>
+                <p>I chose color combinations with sufficient contrast to ensure text is readable for users with low vision.</p>
+            </div>
+
+            <div class="accessibility-card">
+                <h3>Keyboard Navigation</h3>
+                <p>All interactive elements can be accessed using the Tab key, making the site usable for people who cannot use a mouse.</p>
+            </div>
+
+            <div class="accessibility-card">
+                <h3>Responsive Design</h3>
+                <p>The website works on all screen sizes, from desktop to mobile phones, using media queries and flexible layouts.</p>
+            </div>
+
+            <div class="accessibility-card">
+                <h3>Clear Headings</h3>
+                <p>I use proper heading hierarchy (h1 to h6) to organize content logically for screen reader users.</p>
+            </div>
+        </div>
+
+        <div class="reflection-box">
+            <h3>Why Accessibility Matters</h3>
+            <p>Web accessibility ensures that people with disabilities can perceive, understand, navigate, and interact with websites. According to the World Health Organization, over 1 billion people live with some form of disability. Making my websites accessible means I am not excluding anyone from accessing information and services online.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Web Development Portfolio. All rights reserved.</p>
+        <p>Built with HTML, CSS, and JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
