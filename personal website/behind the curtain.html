@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behind the Curtain | My Web Development Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="design-thinking.html">Design Thinking</a></li>
+                <li><a href="global-goal.html">Global Goal</a></li>
+                <li><a href="accessibility.html">Accessibility</a></li>
+                <li><a href="behind-the-curtain.html" class="active">Behind the Curtain</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Behind the Curtain</h1>
+            <p>How I built this website</p>
+        </section>
+
+        <div class="btc-container">
+            <div class="btc-section">
+                <h2>Project Setup</h2>
+                <p>I started by creating a new folder in VS Code and setting up the basic file structure. I created separate files for HTML, CSS, and JavaScript to keep my code organized and maintainable.</p>
+                <div class="code-block">
+                    <pre>
+portfolio/
+├── index.html
+├── portfolio.html
+├── design-thinking.html
+├── global-goal.html
+├── accessibility.html
+├── behind-the-curtain.html
+├── styles.css
+└── script.js
+                    </pre>
+                </div>
+            </div>
+
+            <div class="btc-section">
+                <h2>Challenges I Faced</h2>
+                <p>The most challenging part was making the navigation bar work on both desktop and mobile. I used a combination of Flexbox for desktop and JavaScript with media queries for the mobile menu. Another challenge was getting the color scheme to look professional while maintaining good contrast for accessibility.</p>
+            </div>
+
+            <div class="btc-section">
+                <h2>Using Developer Tools</h2>
+                <p>I used Chrome DevTools extensively to test my layouts, debug CSS issues, and check responsive behavior. The inspector helped me see exactly which styles were applied and where conflicts were happening.</p>
+            </div>
+
+            <div class="btc-section">
+                <h2>What I Learned</h2>
+                <ul>
+                    <li>Planning before coding saves time and prevents major redesigns</li>
+                    <li>CSS Grid and Flexbox make responsive layouts much easier</li>
+                    <li>Accessibility should be considered from the start, not added at the end</li>
+                    <li>Getting feedback early and often improves the final product</li>
+                    <li>JavaScript can make static pages feel alive and interactive</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Web Development Portfolio. All rights reserved.</p>
+        <p>Built with HTML, CSS, and JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
