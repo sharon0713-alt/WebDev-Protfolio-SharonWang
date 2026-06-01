@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | My Web Development Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="design-thinking.html">Design Thinking</a></li>
+                <li><a href="global-goal.html">Global Goal</a></li>
+                <li><a href="accessibility.html">Accessibility</a></li>
+                <li><a href="behind-the-curtain.html">Behind the Curtain</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>My Work</h1>
+            <p>Here are some projects I've built during my learning journey</p>
+        </section>
+
+        <section class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="card-image project1"></div>
+                <h3>Sara's Kitchen</h3>
+                <p>A client website for Sara, who wanted to share her traditional Trinidadian recipes. Built with HTML and CSS.</p>
+                <button class="card-btn" onclick="toggleDetails('project1Details')">View Details</button>
+                <div id="project1Details" class="project-details hidden">
+                    <p><strong>Features:</strong> Semantic HTML, responsive design, custom color scheme, accessibility features.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="card-image project2"></div>
+                <h3>Community Hub</h3>
+                <p>A community website with events, member profiles, and volunteer opportunities. Built with responsive layouts.</p>
+                <button class="card-btn" onclick="toggleDetails('project2Details')">View Details</button>
+                <div id="project2Details" class="project-details hidden">
+                    <p><strong>Features:</strong> Flexbox layouts, hover effects, card components, navigation bar.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="card-image project3"></div>
+                <h3>Climate Action Page</h3>
+                <p>A campaign page for UN Global Goal 13 - Climate Action. Includes facts, images, and calls to action.</p>
+                <button class="card-btn" onclick="toggleDetails('project3Details')">View Details</button>
+                <div id="project3Details" class="project-details hidden">
+                    <p><strong>Features:</strong> Informational layout, accessibility, call-to-action buttons, responsive design.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Web Development Portfolio. All rights reserved.</p>
+        <p>Built with HTML, CSS, and JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
