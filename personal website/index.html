@@ -3,58 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | My Web Development Portfolio</title>
+    <title>✨ Starlight Journey · Me</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <canvas id="starCanvas"></canvas>
+
     <header>
         <nav>
-            <div class="logo">My Portfolio</div>
+            <div class="logo">✦ Starward ✦</div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="design-thinking.html">Design Thinking</a></li>
-                <li><a href="global-goal.html">Global Goal</a></li>
-                <li><a href="accessibility.html">Accessibility</a></li>
-                <li><a href="behind-the-curtain.html">Behind the Curtain</a></li>
+                <li><a href="index.html" class="active">🌙 Home</a></li>
+                <li><a href="about.html">📖 About Me</a></li>
+                <li><a href="design-thinking.html">💡 Design Mind</a></li>
+                <li><a href="global-goal.html">🌍 One Wish</a></li>
+                <li><a href="accessibility.html">♿ Open Doors</a></li>
+                <li><a href="behind-the-curtain.html">🔮 Behind Scenes</a></li>
             </ul>
             <button class="menu-toggle" id="menuToggle">☰</button>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Sharon Wang</span></h1>
-                <p>A passionate web developer who loves creating beautiful and accessible websites.</p>
-                <button class="cta-button" id="welcomeBtn">Welcome to My Portfolio</button>
-            </div>
-        </section>
+    <main class="container">
+        <div class="character-wrapper">
+            <img src="https://cdn.pixabay.com/photo/2023/07/25/02/13/anime-8148310_640.png" 
+                 alt="My anime self" 
+                 class="character-img"
+                 id="mainCharacter">
+            <div class="glow-ring"></div>
+        </div>
 
-        <section class="about-section">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I started learning web development to turn my creative ideas into real websites. Throughout this course, I've learned HTML, CSS, JavaScript, design thinking, and how to make websites accessible to everyone.</p>
-                    <p>My goal is to create meaningful digital experiences that solve real problems. I believe good design should be both beautiful and functional.</p>
-                    <h3>My Skills</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Responsive Design</span>
-                        <span class="skill-tag">Accessibility</span>
-                        <span class="skill-tag">Flexbox/Grid</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="intro-text">
+            <h1 id="typewriter"></h1>
+            <p class="sub">✦ click me · I reply ✦</p>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn" id="waveBtn">👋 Wave</button>
+            <button class="btn" id="magicBtn">✨ Little Magic</button>
+            <button class="btn" id="musicBtn">🎵 Inner sound</button>
+        </div>
+
+        <div id="bubble" class="speech-bubble hidden"></div>
     </main>
-
-    <footer>
-        <p>&copy; 2025 My Web Development Portfolio. All rights reserved.</p>
-        <p>Built with HTML, CSS, and JavaScript</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>

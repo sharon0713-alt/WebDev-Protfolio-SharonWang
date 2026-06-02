@@ -3,68 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | My Web Development Portfolio</title>
+    <title>📖 About Me | Starlight Journey</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <canvas id="starCanvas"></canvas>
+
     <header>
         <nav>
-            <div class="logo">My Portfolio</div>
+            <div class="logo">✦ Starward ✦</div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="design-thinking.html">Design Thinking</a></li>
-                <li><a href="global-goal.html">Global Goal</a></li>
-                <li><a href="accessibility.html">Accessibility</a></li>
-                <li><a href="behind-the-curtain.html">Behind the Curtain</a></li>
+                <li><a href="index.html">🌙 Home</a></li>
+                <li><a href="about.html" class="active">📖 About Me</a></li>
+                <li><a href="design-thinking.html">💡 Design Mind</a></li>
+                <li><a href="global-goal.html">🌍 One Wish</a></li>
+                <li><a href="accessibility.html">♿ Open Doors</a></li>
+                <li><a href="behind-the-curtain.html">🔮 Behind Scenes</a></li>
             </ul>
             <button class="menu-toggle" id="menuToggle">☰</button>
         </nav>
     </header>
 
-    <main>
-        <section class="page-header">
-            <h1>My Work</h1>
-            <p>Here are some projects I've built during my learning journey</p>
-        </section>
+    <main class="page-container">
+        <div class="page-header">
+            <h1>📖 About Me</h1>
+            <p>a quiet dreamer · a curious mind</p>
+        </div>
 
-        <section class="portfolio-grid">
-            <div class="portfolio-card">
-                <div class="card-image project1"></div>
-                <h3>Sara's Kitchen</h3>
-                <p>A client website for Sara, who wanted to share her traditional Trinidadian recipes. Built with HTML and CSS.</p>
-                <button class="card-btn" onclick="toggleDetails('project1Details')">View Details</button>
-                <div id="project1Details" class="project-details hidden">
-                    <p><strong>Features:</strong> Semantic HTML, responsive design, custom color scheme, accessibility features.</p>
-                </div>
+        <div class="card-grid">
+            <div class="card" onclick="toggleDetails('bookDetail')">
+                <div class="card-icon">🌙</div>
+                <h3>I feel most alive when...</h3>
+                <div id="bookDetail" class="card-detail hidden">reading under warm light · walking in light rain · listening to piano at midnight</div>
             </div>
 
-            <div class="portfolio-card">
-                <div class="card-image project2"></div>
-                <h3>Community Hub</h3>
-                <p>A community website with events, member profiles, and volunteer opportunities. Built with responsive layouts.</p>
-                <button class="card-btn" onclick="toggleDetails('project2Details')">View Details</button>
-                <div id="project2Details" class="project-details hidden">
-                    <p><strong>Features:</strong> Flexbox layouts, hover effects, card components, navigation bar.</p>
-                </div>
+            <div class="card" onclick="toggleDetails('filmDetail')">
+                <div class="card-icon">🎐</div>
+                <h3>Quiet joys</h3>
+                <div id="filmDetail" class="card-detail hidden">tea · 4am silence · handwritten notes · old photos</div>
             </div>
 
-            <div class="portfolio-card">
-                <div class="card-image project3"></div>
-                <h3>Climate Action Page</h3>
-                <p>A campaign page for UN Global Goal 13 - Climate Action. Includes facts, images, and calls to action.</p>
-                <button class="card-btn" onclick="toggleDetails('project3Details')">View Details</button>
-                <div id="project3Details" class="project-details hidden">
-                    <p><strong>Features:</strong> Informational layout, accessibility, call-to-action buttons, responsive design.</p>
-                </div>
+            <div class="card" onclick="toggleDetails('travelDetail')">
+                <div class="card-icon">⛰️</div>
+                <h3>Places inside my heart</h3>
+                <div id="travelDetail" class="card-detail hidden">misty mountains · a small library by the sea · Tokyo at dusk</div>
             </div>
-        </section>
+        </div>
+
+        <div class="tiny-poem">
+            ✦ not loud, but deep ✦
+        </div>
     </main>
-
-    <footer>
-        <p>&copy; 2025 My Web Development Portfolio. All rights reserved.</p>
-        <p>Built with HTML, CSS, and JavaScript</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
