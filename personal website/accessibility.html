@@ -3,46 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>♿ Open Doors | Starlight Journey</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Open Doors</title>
+    <style>
+        body {
+            background: radial-gradient(circle at 20% 30%, #0a0f1e, #03060c);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: #f0e9dd;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #fff0cf, #fad49c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .feature {
+            background: rgba(25, 30, 51, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .feature-icon {
+            font-size: 2rem;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.6rem 1.5rem;
+            background: #f3bc6e;
+            color: #141a2c;
+            text-decoration: none;
+            border-radius: 40px;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <h1>♿ Open Doors</h1>
+    <p style="text-align:center;">Design for every human</p>
 
-    <canvas id="starCanvas"></canvas>
+    <div class="feature">
+        <span class="feature-icon">🏷️</span>
+        <div><strong>Semantic HTML</strong><br>Clear structure for screen readers</div>
+    </div>
 
-    <header>
-        <nav>
-            <div class="logo">✦ Starward ✦</div>
-            <ul class="nav-links">
-                <li><a href="index.html">🌙 Home</a></li>
-                <li><a href="about.html">📖 About Me</a></li>
-                <li><a href="design-thinking.html">💡 Design Mind</a></li>
-                <li><a href="global-goal.html">🌍 One Wish</a></li>
-                <li><a href="accessibility.html" class="active">♿ Open Doors</a></li>
-                <li><a href="behind-the-curtain.html">🔮 Behind Scenes</a></li>
-            </ul>
-            <button class="menu-toggle" id="menuToggle">☰</button>
-        </nav>
-    </header>
+    <div class="feature">
+        <span class="feature-icon">🖼️</span>
+        <div><strong>Alt Text on Images</strong><br>Descriptions for all visual content</div>
+    </div>
 
-    <main class="page-container">
-        <div class="page-header">
-            <h1>♿ Open Doors</h1>
-            <p>design for every human</p>
-        </div>
+    <div class="feature">
+        <span class="feature-icon">🎨</span>
+        <div><strong>High Color Contrast</strong><br>Easy to read for everyone</div>
+    </div>
 
-        <div class="ac-list">
-            <div>✅ semantic HTML · clear for screen readers</div>
-            <div>✅ high contrast · easy on eyes</div>
-            <div>✅ keyboard friendly · no mouse needed</div>
-            <div>✅ responsive · works everywhere</div>
-        </div>
+    <div class="feature">
+        <span class="feature-icon">⌨️</span>
+        <div><strong>Keyboard Navigation</strong><br>No mouse needed</div>
+    </div>
 
-        <div class="quote-block">
-            「 inclusion is not a feature — it’s respect 」
-        </div>
-    </main>
+    <div class="feature">
+        <span class="feature-icon">📱</span>
+        <div><strong>Responsive Design</strong><br>Works on all screen sizes</div>
+    </div>
 
-    <script src="script.js"></script>
+    <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
 </body>
 </html>

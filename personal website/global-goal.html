@@ -3,43 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌍 One Wish | Starlight Journey</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>One Wish</title>
+    <style>
+        body {
+            background: radial-gradient(circle at 20% 30%, #0a0f1e, #03060c);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: #f0e9dd;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #fff0cf, #fad49c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .goal-card {
+            background: rgba(25, 30, 51, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border: 1px solid #ffdca8;
+        }
+        h2 {
+            color: #f3c57b;
+        }
+        .action-list {
+            list-style: none;
+            padding: 0;
+        }
+        .action-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #2a2547;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.6rem 1.5rem;
+            background: #f3bc6e;
+            color: #141a2c;
+            text-decoration: none;
+            border-radius: 40px;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <h1>🌍 One Wish</h1>
+    <h2 style="text-align:center;">UN Goal 13 · Climate Action</h2>
 
-    <canvas id="starCanvas"></canvas>
+    <div class="goal-card">
+        <h2>🌡️ Why This Matters</h2>
+        <p>Our planet is warming. Extreme weather is becoming more common. Rising sea levels threaten coastal communities. But there is hope — every small action adds up.</p>
+    </div>
 
-    <header>
-        <nav>
-            <div class="logo">✦ Starward ✦</div>
-            <ul class="nav-links">
-                <li><a href="index.html">🌙 Home</a></li>
-                <li><a href="about.html">📖 About Me</a></li>
-                <li><a href="design-thinking.html">💡 Design Mind</a></li>
-                <li><a href="global-goal.html" class="active">🌍 One Wish</a></li>
-                <li><a href="accessibility.html">♿ Open Doors</a></li>
-                <li><a href="behind-the-curtain.html">🔮 Behind Scenes</a></li>
-            </ul>
-            <button class="menu-toggle" id="menuToggle">☰</button>
-        </nav>
-    </header>
+    <div class="goal-card">
+        <h2>🌱 What We Can Do</h2>
+        <ul class="action-list">
+            <li>🌿 Reduce food waste and compost</li>
+            <li>🚲 Walk, bike, or take public transport</li>
+            <li>💡 Use energy-saving light bulbs</li>
+            <li>🗣️ Talk about climate change with friends</li>
+            <li>🌳 Plant trees or support reforestation</li>
+        </ul>
+    </div>
 
-    <main class="page-container">
-        <div class="page-header">
-            <h1>🌍 One Wish</h1>
-            <p>UN Global Goal 13 · Climate Action</p>
-        </div>
+    <div class="goal-card">
+        <h2>💚 My Promise</h2>
+        <p>I will be more mindful of my daily choices — from what I eat to how I travel. Small changes, when multiplied by millions, can change the world.</p>
+    </div>
 
-        <div class="goal-card">
-            🌱 the earth speaks softly — let’s listen.<br>
-            ✨ less waste · more trees · small honest acts
-        </div>
-
-        <button class="magic-small" id="earthBtn">🌿 make a wish</button>
-        <div id="earthMsg" class="msg-balloon hidden"></div>
-    </main>
-
-    <script src="script.js"></script>
+    <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
 </body>
 </html>

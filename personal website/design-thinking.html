@@ -3,47 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💡 Design Mind | Starlight Journey</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Design Mind</title>
+    <style>
+        body {
+            background: radial-gradient(circle at 20% 30%, #0a0f1e, #03060c);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: #f0e9dd;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #fff0cf, #fad49c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .step {
+            background: rgba(25, 30, 51, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid #f3bc6e;
+        }
+        .step-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #f3c57b;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.6rem 1.5rem;
+            background: #f3bc6e;
+            color: #141a2c;
+            text-decoration: none;
+            border-radius: 40px;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <h1>💡 Design Mind</h1>
+    
+    <div class="step">
+        <div class="step-number">01  Empathy</div>
+        <p>I started by listening. I interviewed Sara to understand her love for cooking, her family stories, and why red and gold mean so much to her.</p>
+    </div>
 
-    <canvas id="starCanvas"></canvas>
+    <div class="step">
+        <div class="step-number">02  Define</div>
+        <p>I defined the real need: "Sara needs a way to share her traditional recipes and family stories to preserve her cultural heritage."</p>
+    </div>
 
-    <header>
-        <nav>
-            <div class="logo">✦ Starward ✦</div>
-            <ul class="nav-links">
-                <li><a href="index.html">🌙 Home</a></li>
-                <li><a href="about.html">📖 About Me</a></li>
-                <li><a href="design-thinking.html" class="active">💡 Design Mind</a></li>
-                <li><a href="global-goal.html">🌍 One Wish</a></li>
-                <li><a href="accessibility.html">♿ Open Doors</a></li>
-                <li><a href="behind-the-curtain.html">🔮 Behind Scenes</a></li>
-            </ul>
-            <button class="menu-toggle" id="menuToggle">☰</button>
-        </nav>
-    </header>
+    <div class="step">
+        <div class="step-number">03  Ideate</div>
+        <p>I brainstormed colors, layouts, and content — red & gold, recipe lists, family photos, and a personal story section.</p>
+    </div>
 
-    <main class="page-container">
-        <div class="page-header">
-            <h1>💡 Design Mind</h1>
-            <p>how I think & build</p>
-        </div>
+    <div class="step">
+        <div class="step-number">04  Prototype</div>
+        <p>I built a simple version with HTML & CSS. It wasn't perfect, but it was real. I could see what worked and what didn't.</p>
+    </div>
 
-        <div class="steps">
-            <div class="step">❶ Empathy — listen, then listen more</div>
-            <div class="step">❷ Define — find the real quiet need</div>
-            <div class="step">❸ Ideate — gentle storms of ideas</div>
-            <div class="step">❹ Prototype — build small, feel fast</div>
-            <div class="step">❺ Test — feedback is a gift</div>
-        </div>
+    <div class="step">
+        <div class="step-number">05  Test</div>
+        <p>I showed it to others. Feedback made it better: more stories, better images, clearer recipes. Iteration is everything.</p>
+    </div>
 
-        <div class="quote-block">
-            「 design is kindness made visible 」
-        </div>
-    </main>
-
-    <script src="script.js"></script>
+    <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
 </body>
 </html>

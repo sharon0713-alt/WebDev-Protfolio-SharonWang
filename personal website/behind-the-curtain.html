@@ -3,49 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔮 Behind Scenes | Starlight Journey</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Behind Scenes</title>
+    <style>
+        body {
+            background: radial-gradient(circle at 20% 30%, #0a0f1e, #03060c);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: #f0e9dd;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #fff0cf, #fad49c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .section {
+            background: rgba(25, 30, 51, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .code {
+            background: #0a0f1e;
+            padding: 1rem;
+            border-radius: 1rem;
+            font-family: monospace;
+            font-size: 0.8rem;
+            overflow-x: auto;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.6rem 1.5rem;
+            background: #f3bc6e;
+            color: #141a2c;
+            text-decoration: none;
+            border-radius: 40px;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <h1>🔮 Behind Scenes</h1>
 
-    <canvas id="starCanvas"></canvas>
+    <div class="section">
+        <h2>✨ How This Site Was Built</h2>
+        <p>I started with a simple idea: create a space that feels like a quiet dream. Every color, animation, and line of code was chosen with care.</p>
+    </div>
 
-    <header>
-        <nav>
-            <div class="logo">✦ Starward ✦</div>
-            <ul class="nav-links">
-                <li><a href="index.html">🌙 Home</a></li>
-                <li><a href="about.html">📖 About Me</a></li>
-                <li><a href="design-thinking.html">💡 Design Mind</a></li>
-                <li><a href="global-goal.html">🌍 One Wish</a></li>
-                <li><a href="accessibility.html">♿ Open Doors</a></li>
-                <li><a href="behind-the-curtain.html" class="active">🔮 Behind Scenes</a></li>
-            </ul>
-            <button class="menu-toggle" id="menuToggle">☰</button>
-        </nav>
-    </header>
+    <div class="section">
+        <h2>💻 Tech Used</h2>
+        <ul>
+            <li>HTML5 for structure</li>
+            <li>CSS3 for styling, animations, and responsive design</li>
+            <li>JavaScript for interactivity (typing effect, messages, canvas stars)</li>
+        </ul>
+    </div>
 
-    <main class="page-container">
-        <div class="page-header">
-            <h1>🔮 Behind Scenes</h1>
-            <p>how this star was built</p>
-        </div>
+    <div class="section">
+        <h2>🧠 Challenges I Faced</h2>
+        <ul>
+            <li>Making the navigation work on all pages</li>
+            <li>Balancing aesthetics with accessibility</li>
+            <li>Creating a consistent dreamy color palette</li>
+        </ul>
+    </div>
 
-        <div class="btc-list">
-            <p>✨ hand-drawn CSS stars + floating animation</p>
-            <p>⚡ cards respond to touch / click</p>
-            <p>🎨 colors: dream purple · starlight gold · quiet dark</p>
-            <p>🧠 hardest part: saying less but meaning more</p>
-        </div>
+    <div class="section">
+        <h2>🎨 My Favorite Part</h2>
+        <p>The floating character and the glowing ring — because it feels like magic ✨</p>
+    </div>
 
-        <div class="code-mini">
-            <pre>@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}</pre>
-        </div>
-    </main>
-
-    <script src="script.js"></script>
+    <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
 </body>
 </html>
