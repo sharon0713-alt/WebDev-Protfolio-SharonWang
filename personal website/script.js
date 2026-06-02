@@ -85,7 +85,7 @@ window.toggleDetails = function(id) {
 window.addEventListener('load', () => {
     const typewriterEl = document.getElementById('typewriter');
     if (typewriterEl) {
-        const text = "I'm Sharon Wang · a quiet creator";
+        const text = "I'm Sharon Wang";
         let i = 0;
         typewriterEl.innerHTML = '';
         function write() {
