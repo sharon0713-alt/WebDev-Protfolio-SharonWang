@@ -3,50 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ Starlight Journey · Me</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>About Me</title>
+    <style>
+        body {
+            background: radial-gradient(circle at 20% 30%, #0a0f1e, #03060c);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: #f0e9dd;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .about-card {
+            background: rgba(25, 30, 51, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            padding: 2rem;
+            margin: 1rem 0;
+            border: 1px solid #ffdca8;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, #fff0cf, #fad49c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        h2 {
+            color: #f3c57b;
+            border-left: 3px solid #f3c57b;
+            padding-left: 1rem;
+            margin: 1.5rem 0 1rem;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+        .skill {
+            background: #2a2547;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            border: 1px solid #f3bc6e;
+        }
+        .interest-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+        .interest-item {
+            background: #1e2238;
+            padding: 1rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .interest-item:hover {
+            transform: translateY(-5px);
+        }
+        .interest-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 0.8rem;
+            margin-bottom: 0.8rem;
+            border: 2px solid #f3bc6e;
+        }
+        .quote {
+            font-style: italic;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.2rem;
+            color: #ffdcac;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.6rem 1.5rem;
+            background: #f3bc6e;
+            color: #141a2c;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-    <canvas id="starCanvas"></canvas>
+<div class="container">
+    <h1>📖 About Me</h1>
+    
+    <div class="about-card">
+        <p>Hi, I'm a dreamer who loves creating beautiful things — whether it's a website, a drawing, or just a quiet moment with a good book.</p>
+        <p>I believe that the best designs come from empathy, curiosity, and a little bit of magic. I enjoy learning new things and sharing them with others.</p>
+    </div>
 
-    <header>
-        <nav>
-            <div class="logo">✦ Starward ✦</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">🌙 Home</a></li>
-                <li><a href="portfolio.html">📖 About Me</a></li>
-                <li><a href="design-thinking.html">💡 Design Mind</a></li>
-                <li><a href="global-goal.html">🌍 One Wish</a></li>
-                <li><a href="accessibility.html">♿ Open Doors</a></li>
-                <li><a href="behind-the-curtain.html">🔮 Behind Scenes</a></li>
-            </ul>
-            <button class="menu-toggle" id="menuToggle">☰</button>
-        </nav>
-    </header>
-
-    <main class="container">
-        <div class="character-wrapper">
-            <img src="myself.jpg" 
-            class="character-img"
-            id="mainCharacter">
-            <div class="glow-ring"></div>
+    <div class="about-card">
+        <h2>✨ My Skills</h2>
+        <div class="skill-tags">
+            <span class="skill">HTML & CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Responsive Design</span>
+            <span class="skill">Design Thinking</span>
+            <span class="skill">UI/UX Basics</span>
         </div>
+    </div>
 
-        <div class="intro-text">
-            <h1 id="typewriter"></h1>
-            <p class="sub">✦ click me · I reply ✦</p>
+    <div class="about-card">
+        <h2>🎨 Things I Love</h2>
+        <div class="interest-list">
+            <div class="interest-item">
+                <img src="music.jpg" alt="Music" class="interest-img">
+                <div>🎵 Listening to music</div>
+            </div>
+            <div class="interest-item">
+                <img src="travel.jpg" alt="Travel" class="interest-img">
+                <div>✈️ Traveling to quiet places</div>
+            </div>
+            <div class="interest-item">
+                <img src="anime.jpeg" alt="Ghibli" class="interest-img">
+                <div>🎬 anime</div>
+            </div>
         </div>
+    </div>
 
-        <div class="action-buttons">
-            <button class="btn" id="waveBtn">👋 Wave</button>
-            <button class="btn" id="magicBtn">✨ Little Magic</button>
-            <button class="btn" id="musicBtn">🎵 Inner sound</button>
-        </div>
+    <div class="about-card">
+        <h2>🌱 My Goal</h2>
+        <p>To create websites that are not only beautiful but also accessible and meaningful. I want every project to feel like a small gift to the person using it.</p>
+    </div>
 
-        <div id="bubble" class="speech-bubble hidden"></div>
-    </main>
+    <div class="quote">
+        "✨ Do what makes your soul shine. ✨"
+    </div>
 
-    <script src="script.js"></script>
+    <a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+
 </body>
 </html>
