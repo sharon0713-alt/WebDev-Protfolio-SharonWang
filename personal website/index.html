@@ -40,6 +40,7 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 1rem 2rem;
+            flex-wrap: wrap;
         }
         .logo {
             font-size: 1.5rem;
@@ -50,13 +51,15 @@
         }
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
             list-style: none;
+            flex-wrap: wrap;
         }
         .nav-links a {
             color: #eadbc0;
             text-decoration: none;
             transition: 0.2s;
+            font-size: 0.95rem;
         }
         .nav-links a:hover {
             color: #f3c57b;
@@ -100,7 +103,7 @@
             position: relative;
         }
         #typewriter {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             border-right: 2px solid #ffcf8a;
             display: inline-block;
             background: linear-gradient(135deg, #fff0cf, #fad49c);
@@ -110,7 +113,7 @@
         }
         .sub {
             margin-top: 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.7;
         }
         .action-buttons {
@@ -118,16 +121,18 @@
             gap: 1rem;
             justify-content: center;
             margin: 2rem 0;
+            flex-wrap: wrap;
         }
         .btn {
             background: #1e2238cc;
             backdrop-filter: blur(8px);
             border: 1px solid #f3bc6e;
-            padding: 0.6rem 1.5rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 60px;
             color: #ffefcf;
             cursor: pointer;
             transition: 0.2s;
+            font-size: 0.9rem;
         }
         .btn:hover {
             background: #e5a35e;
@@ -135,7 +140,7 @@
         }
         .speech-bubble {
             position: fixed;
-            bottom: 12%;
+            bottom: 10%;
             left: 50%;
             transform: translateX(-50%);
             background: #2a2547dd;
@@ -143,6 +148,7 @@
             border-radius: 60px;
             padding: 0.6rem 1.5rem;
             font-size: 1rem;
+            white-space: nowrap;
             border: 1px solid #ffcb8a;
             z-index: 99;
         }
@@ -151,10 +157,30 @@
         }
         @media (max-width: 700px) {
             .character-img {
-                width: 200px;
+                width: 180px;
             }
             #typewriter {
-                font-size: 1.2rem;
+                font-size: 1rem;
+            }
+            .nav-links {
+                justify-content: center;
+                margin-top: 0.5rem;
+            }
+            .logo {
+                margin-bottom: 0.5rem;
+            }
+            nav {
+                flex-direction: column;
+            }
+            .btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+            .speech-bubble {
+                font-size: 0.8rem;
+                white-space: normal;
+                width: 80%;
+                text-align: center;
             }
         }
     </style>
@@ -167,7 +193,12 @@
         <nav>
             <div class="logo">✦ Starward ✦</div>
             <ul class="nav-links">
-                <li><a href="#">🌙 Home</a></li>
+                <li><a href="index.html" class="active">🌙 Home</a></li>
+                <li><a href="protfolio.html">📖 About Me</a></li>
+                <li><a href="design thinking.html">💡 Design Mind</a></li>
+                <li><a href="global goal.html">🌍 One Wish</a></li>
+                <li><a href="acccibility.html">♿ Open Doors</a></li>
+                <li><a href="behind the curtain.html">🔮 Behind Scenes</a></li>
             </ul>
         </nav>
     </header>
@@ -199,7 +230,7 @@
         const ctx = canvas.getContext('2d');
         let stars = [];
         
-        function resize() {
+        function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
@@ -212,55 +243,76 @@
                     y: Math.random() * canvas.height,
                     r: Math.random() * 2 + 1,
                     alpha: Math.random() * 0.6 + 0.2,
-                    spd: 0.03 + Math.random() * 0.08
+                    speed: 0.03 + Math.random() * 0.08
                 });
             }
         }
         
         function drawStars() {
+            if (!ctx) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let s of stars) {
                 ctx.beginPath();
                 ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 240, 200, ${s.alpha + Math.sin(Date.now() * s.spd) * 0.2})`;
+                ctx.fillStyle = `rgba(255, 240, 200, ${s.alpha + Math.sin(Date.now() * s.speed) * 0.2})`;
                 ctx.fill();
             }
             requestAnimationFrame(drawStars);
         }
         
-        resize();
+        resizeCanvas();
         initStars();
         drawStars();
-        window.addEventListener('resize', () => { resize(); initStars(); });
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initStars();
+        });
         
-        // 角色互动
-        const char = document.getElementById('mainCharacter');
+        const character = document.getElementById('mainCharacter');
         const bubble = document.getElementById('bubble');
         
-        function msg(text, time = 1800) {
-            bubble.textContent = text;
+        function showMessage(msg, duration = 1800) {
+            bubble.textContent = msg;
             bubble.classList.remove('hidden');
-            setTimeout(() => bubble.classList.add('hidden'), time);
+            setTimeout(() => {
+                bubble.classList.add('hidden');
+            }, duration);
         }
         
-        char.addEventListener('click', () => msg("✨ a quiet star thanks you ✨"));
-        char.addEventListener('mouseenter', () => msg("💫 you came", 900));
+        if (character) {
+            character.addEventListener('click', () => {
+                showMessage("✨ a quiet star thanks you ✨");
+            });
+            character.addEventListener('mouseenter', () => {
+                showMessage("💫 you came", 900);
+            });
+        }
         
-        document.getElementById('waveBtn').onclick = () => msg("👋 hi from another dreamer");
-        document.getElementById('magicBtn').onclick = () => msg("✨ a small spark just for you ✨");
-        document.getElementById('musicBtn').onclick = () => msg("🎵 your inner song is beautiful");
+        document.getElementById('waveBtn').addEventListener('click', () => {
+            showMessage("👋 hi from another dreamer");
+        });
         
-        const el = document.getElementById('typewriter');
-        const text = "✨ I'm " + MY_NAME + " · a quiet creator";
-        let idx = 0;
-        function type() {
-            if (idx < text.length) {
-                el.innerHTML += text.charAt(idx);
-                idx++;
-                setTimeout(type, 70);
+        document.getElementById('magicBtn').addEventListener('click', () => {
+            showMessage("✨ a small spark just for you ✨");
+        });
+        
+        document.getElementById('musicBtn').addEventListener('click', () => {
+            showMessage("🎵 your inner song is beautiful");
+        });
+        
+        const typewriterEl = document.getElementById('typewriter');
+        const fullText = "✨ I'm " + MY_NAME + " · a quiet creator";
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < fullText.length) {
+                typewriterEl.innerHTML += fullText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 70);
             }
         }
-        type();
+        
+        typeWriter();
     </script>
 </body>
 </html>
