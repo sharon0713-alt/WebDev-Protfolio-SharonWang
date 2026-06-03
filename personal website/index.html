@@ -3,147 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>✨ Starlight Journey · Me</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            background: radial-gradient(circle at 20% 30%, #0a0f1e, #03060c);
             font-family: 'Segoe UI', system-ui, sans-serif;
+            background: radial-gradient(circle at 20% 30%, #0a0f1e, #03060c);
             color: #f0e9dd;
             min-height: 100vh;
         }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            background: rgba(10, 15, 30, 0.75);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #ffdca866;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            font-size: 1.5rem;
+            background: linear-gradient(130deg, #f9e0a0, #e5b87b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #eadbc0;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            color: #f3c57b;
+        }
         .container {
-            max-width: 900px;
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
-        }
-        .about-card {
-            background: rgba(25, 30, 51, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 2rem;
-            padding: 2rem;
-            margin: 1rem 0;
-            border: 1px solid #ffdca8;
-        }
-        h1 {
-            font-size: 2.5rem;
             text-align: center;
+        }
+        .character-img {
+            width: 260px;
+            filter: drop-shadow(0 10px 20px #00000055);
+            animation: float 3s infinite ease;
+            cursor: pointer;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .glow-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 110%;
+            height: 110%;
+            background: radial-gradient(circle, #ffc28530, #ff9f5a00);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.4; transform: translate(-50%, -50%) scale(0.9);}
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(1.3);}
+        }
+        .character-wrapper {
+            display: inline-block;
+            position: relative;
+        }
+        #typewriter {
+            font-size: 1.8rem;
+            border-right: 2px solid #ffcf8a;
+            display: inline-block;
             background: linear-gradient(135deg, #fff0cf, #fad49c);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
-        h2 {
-            color: #f3c57b;
-            border-left: 3px solid #f3c57b;
-            padding-left: 1rem;
-            margin: 1.5rem 0 1rem;
-        }
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin: 1rem 0;
-        }
-        .skill {
-            background: #2a2547;
-            padding: 0.4rem 1rem;
-            border-radius: 30px;
+        .sub {
+            margin-top: 0.5rem;
             font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .btn {
+            background: #1e2238cc;
+            backdrop-filter: blur(8px);
             border: 1px solid #f3bc6e;
-        }
-        .interest-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 1rem 0;
-        }
-        .interest-item {
-            background: #1e2238;
-            padding: 1rem;
-            border-radius: 1rem;
-            text-align: center;
-            transition: transform 0.2s;
-        }
-        .interest-item:hover {
-            transform: translateY(-5px);
-        }
-        .interest-img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 0.8rem;
-            margin-bottom: 0.8rem;
-            border: 2px solid #f3bc6e;
-        }
-        .quote {
-            font-style: italic;
-            text-align: center;
-            padding: 2rem;
-            font-size: 1.2rem;
-            color: #ffdcac;
-        }
-        .back-btn {
-            display: inline-block;
-            margin-top: 2rem;
             padding: 0.6rem 1.5rem;
-            background: #f3bc6e;
+            border-radius: 60px;
+            color: #ffefcf;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: #e5a35e;
             color: #141a2c;
-            text-decoration: none;
-            border-radius: 40px;
-            font-weight: bold;
+        }
+        .speech-bubble {
+            position: fixed;
+            bottom: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2a2547dd;
+            backdrop-filter: blur(12px);
+            border-radius: 60px;
+            padding: 0.6rem 1.5rem;
+            font-size: 1rem;
+            border: 1px solid #ffcb8a;
+            z-index: 99;
+        }
+        .hidden {
+            display: none;
+        }
+        @media (max-width: 700px) {
+            .character-img {
+                width: 200px;
+            }
+            #typewriter {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>📖 About Me</h1>
-    
-    <div class="about-card">
-        <p>Hi, I'm a dreamer who loves creating beautiful things — whether it's a website, a drawing, or just a quiet moment with a good book.</p>
-        <p>I believe that the best designs come from empathy, curiosity, and a little bit of magic. I enjoy learning new things and sharing them with others.</p>
-    </div>
+    <canvas id="starCanvas"></canvas>
 
-    <div class="about-card">
-        <h2>✨ My Skills</h2>
-        <div class="skill-tags">
-            <span class="skill">HTML & CSS</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">Responsive Design</span>
-            <span class="skill">Design Thinking</span>
-            <span class="skill">UI/UX Basics</span>
+    <header>
+        <nav>
+            <div class="logo">✦ Starward ✦</div>
+            <ul class="nav-links">
+                <li><a href="#">🌙 Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="character-wrapper">
+            <img src="myself.jpg" class="character-img" id="mainCharacter">
+            <div class="glow-ring"></div>
         </div>
-    </div>
 
-    <div class="about-card">
-        <h2>🎨 Things I Love</h2>
-        <div class="interest-list">
-            <div class="interest-item">
-                <img src="music.jpeg" alt="Music" class="interest-img">
-                <div>🎵 Listening to music</div>
-            </div>
-            <div class="interest-item">
-                <img src="travel.jpg" alt="Travel" class="interest-img">
-                <div>✈️ Traveling to quiet places</div>
-            </div>
-            <div class="interest-item">
-                <img src="anime.jpeg" alt="Ghibli" class="interest-img">
-                <div>🎬 anime</div>
-            </div>
+        <div class="intro-text">
+            <h1 id="typewriter"></h1>
+            <p class="sub">✦ click me · I reply ✦</p>
         </div>
-    </div>
 
-    <div class="about-card">
-        <h2>🌱 My Goal</h2>
-        <p>To create websites that are not only beautiful but also accessible and meaningful. I want every project to feel like a small gift to the person using it.</p>
-    </div>
+        <div class="action-buttons">
+            <button class="btn" id="waveBtn">👋 Wave</button>
+            <button class="btn" id="magicBtn">✨ Little Magic</button>
+            <button class="btn" id="musicBtn">🎵 Inner sound</button>
+        </div>
 
-    <div class="quote">
-        "✨ Do what makes your soul shine. ✨"
-    </div>
+        <div id="bubble" class="speech-bubble hidden"></div>
+    </main>
 
-    <a href="index.html" class="back-btn">← Back to Home</a>
-</div>
-
+    <script>
+        const MY_NAME = "Sharon Wang";
+        
+        const canvas = document.getElementById('starCanvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        function initStars() {
+            stars = [];
+            for (let i = 0; i < 150; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 2 + 1,
+                    alpha: Math.random() * 0.6 + 0.2,
+                    spd: 0.03 + Math.random() * 0.08
+                });
+            }
+        }
+        
+        function drawStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let s of stars) {
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 240, 200, ${s.alpha + Math.sin(Date.now() * s.spd) * 0.2})`;
+                ctx.fill();
+            }
+            requestAnimationFrame(drawStars);
+        }
+        
+        resize();
+        initStars();
+        drawStars();
+        window.addEventListener('resize', () => { resize(); initStars(); });
+        
+        // 角色互动
+        const char = document.getElementById('mainCharacter');
+        const bubble = document.getElementById('bubble');
+        
+        function msg(text, time = 1800) {
+            bubble.textContent = text;
+            bubble.classList.remove('hidden');
+            setTimeout(() => bubble.classList.add('hidden'), time);
+        }
+        
+        char.addEventListener('click', () => msg("✨ a quiet star thanks you ✨"));
+        char.addEventListener('mouseenter', () => msg("💫 you came", 900));
+        
+        document.getElementById('waveBtn').onclick = () => msg("👋 hi from another dreamer");
+        document.getElementById('magicBtn').onclick = () => msg("✨ a small spark just for you ✨");
+        document.getElementById('musicBtn').onclick = () => msg("🎵 your inner song is beautiful");
+        
+        const el = document.getElementById('typewriter');
+        const text = "✨ I'm " + MY_NAME + " · a quiet creator";
+        let idx = 0;
+        function type() {
+            if (idx < text.length) {
+                el.innerHTML += text.charAt(idx);
+                idx++;
+                setTimeout(type, 70);
+            }
+        }
+        type();
+    </script>
 </body>
 </html>
